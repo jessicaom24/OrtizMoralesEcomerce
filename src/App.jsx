@@ -1,18 +1,23 @@
 
-import ItemCount from './components/itemCount'
-import ItemListContainer from './components/ItemListContainer'
-import Navbar from './components/Navbar'
-import './index.css'
+import './index.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
-function App() {
-
-
+const App = () => {
   return (
     <>
-      <Navbar></Navbar>
-      <ItemListContainer saludo={'Bienvenidos!'}></ItemListContainer>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/tipos" element={<h2>Tipos</h2>} />
+<Route path="/modelos" element={<h2>Modelos</h2>} />
+      </Routes>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,9 +1,10 @@
-function CarWidget(){
-    return(
-        <img></img>
-    )
-}
+import React from 'react';
 
-export default CarWidget
-
-/*src="" alt="carrito"*/
+const CarWidget = () => {
+  return (
+    <div className="car-widget">
+      🛒 <span>0</span>
+    </div>
+  );
+};
+export default CarWidget;

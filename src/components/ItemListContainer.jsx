@@ -1,8 +1,20 @@
-function ItemListContainer(props){
-    return(
-    <h1>{props.saludo}</h1>
-    )
-}
+import React, { useEffect, useState } from 'react';
+import { getProducts } from '../utils/getProducts';
+import ItemList from './ItemList';
 
+const ItemListContainer = () => {
+  const [products, setProducts] = useState([]);
 
-export default ItemListContainer
+  useEffect(() => {
+    getProducts().then((data) => setProducts(data));
+  }, []);
+
+  return (
+    <section>
+      <h2>Catálogo de Ropa Interior</h2>
+      <ItemList products={products} />
+    </section>
+  );
+};
+
+export default ItemListContainer;
