@@ -5,6 +5,7 @@ const ItemDetail = ({ product }) => {
 
   return (
     <div className="item-detail">
+      <img src={product.pictureUrl} alt={product.name} style={{ width: '100%', height: 'auto' }} />
       <h2>{product.name}</h2>
       <p>Precio: ${product.price}</p>
       <p>{product.description}</p>
